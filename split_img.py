@@ -97,11 +97,14 @@ def split(img, split_num=4):
             left_up_right_down_tuple_list.append((l, u, r, d))
         return left_up_right_down_tuple_list, None
     else:
+        print(error)
         return None, "计算失败!!"
 
 
 if __name__ == "__main__":
-    img = Image.open('result.jpg')
+    # img = Image.open('result.jpg')
+    img = Image.open('test.jpg')
+
     # 直接将图片置为灰度模式, 以便于 Image.fromarray 获取
     img = img.convert("L")
     img_array = np.array(img)
@@ -110,3 +113,5 @@ if __name__ == "__main__":
         bimg_array = np.where(img_array > 200, 255, 0)
         bimg = Image.fromarray(bimg_array)
         save_splited_img(lurd_list, bimg)
+    else:
+        print(error)
