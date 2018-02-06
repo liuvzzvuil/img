@@ -55,7 +55,6 @@ def search(lis, broke_num=3):
 
 
 def save_splited_img(split_list, img):
-    index = 0
     img_list = []
     for i in split_list:
         temp = img.crop(i)
